@@ -113,7 +113,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           );
         console.log('advancedSettings');
 
-        $save_button.prop('disabled', true);
+        $save_button.prop('disabled', false);
         $('.content__top__preset').css({float: 'left'});
 
         $('.list__body-right__top').css({display: 'block'})
