@@ -33,7 +33,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           },
           function (msg) {
             var resultPost = document.querySelector('caption');
-            resultPost.innerHTML.result;
+            console.log(resultPost);
           },
           'json',
           function() {
