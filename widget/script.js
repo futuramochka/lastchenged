@@ -11,11 +11,11 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           emails: "dubenco@protonmail.com"
       },
       function (msg) {
-        console.log("Запрос прошёл удачно");
+        alert("Запрос прошёл удачно");
       },
       'json',
       function() {
-        console.log("Error!");
+        alert("Error!");
       }
     );
 
