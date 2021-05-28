@@ -1,6 +1,19 @@
 define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
   var CustomWidget = function () {
     var self = this;
+    //Делаем пост запрос к серверу
+    self.crm_post(
+      'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/lastchenged.php',
+      {
+          // Передаем POST данные
+          name: "Alexandr",
+          phones: "+79856394780",
+          emails: "dubenco@protonmail.com"
+      },
+      function (msg) {
+      },
+      'json'
+    );
 
     this.getTemplate = _.bind(function (template, params, callback) {
       params = (typeof params == 'object') ? params : {};
