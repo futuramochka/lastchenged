@@ -29,9 +29,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/lastchenged.php',
           {
               // Передаем POST данные
-              name: "Alexandr",
-              phones: "+79856394780",
-              emails: "dubenco@protonmail.com"
+              id: 874979
           },
           function (msg) {
             alert("Ok");
