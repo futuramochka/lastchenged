@@ -11,8 +11,12 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           emails: "dubenco@protonmail.com"
       },
       function (msg) {
+        console.log(msg);
       },
-      'json'
+      'json',
+      function() {
+        console.log("Error!");
+      }
     );
 
     this.getTemplate = _.bind(function (template, params, callback) {
