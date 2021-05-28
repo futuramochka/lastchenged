@@ -32,7 +32,8 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               id: 874979
           },
           function (msg) {
-            alert("Ok");
+            var resultPost = document.querySelector('caption');
+            resultPost.innerHTML.result;
           },
           'json',
           function() {
