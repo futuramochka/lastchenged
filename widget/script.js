@@ -11,7 +11,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           emails: "dubenco@protonmail.com"
       },
       function (msg) {
-        console.log(msg);
+        console.log("Запрос прошёл удачно");
       },
       'json',
       function() {
