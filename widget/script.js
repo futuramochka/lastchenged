@@ -19,8 +19,12 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
     this.callbacks = {
       render: function () {
         console.log('render');
+        return true;
+      },
+      init: _.bind(function () {
+        console.log('init');
 
-         //Делаем пост запрос к серверу
+        //Делаем пост запрос к серверу
         self.crm_post(
           'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/lastchenged.php',
           {
@@ -30,18 +34,13 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               emails: "dubenco@protonmail.com"
           },
           function (msg) {
-            alert("Запрос прошёл удачно");
+            alert("Ok");
           },
           'json',
           function() {
             alert("Error!");
           }
         );
-
-        return true;
-      },
-      init: _.bind(function () {
-        console.log('init');
 
         AMOCRM.addNotificationCallback(self.get_settings().widget_code, function (data) {
           console.log(data)
