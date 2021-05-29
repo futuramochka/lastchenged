@@ -26,14 +26,13 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
 
         //Делаем пост запрос к серверу
         self.crm_post(
-          'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/lastchenged.php',
+          'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/getupdate_at.php',
           {
               // Передаем POST данные
               id: 874979
           },
           function (msg) {
-            var resultPost = document.querySelector('caption');
-            console.log(resultPost);
+            console.log(response)
           },
           'json',
           function() {
