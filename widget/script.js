@@ -1,8 +1,7 @@
 define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
   var CustomWidget = function () {
     var self = this;
-   
-    self.get_version(); //Сбросим кэш
+  
     this.getTemplate = _.bind(function (template, params, callback) {
       params = (typeof params == 'object') ? params : {};
       template = template || '';
@@ -66,26 +65,28 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
       }, this),
       bind_actions: function () {
         console.log('bind_actions');
+        //Берём кнопку сделки
+        var buttonLead = document.querySelector(".js-button-with-loader");
+        //Проверяем сохранил ли карточку клиент
+        buttonLead.addEventListener('click', function(evt){
+          console.log('Кликнул по кнопке');
         //Делаем пост запрос к серверу
-        if(AMOCRM.data.is_card) {
-          self.crm_post(
-            'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/test.php',
-            {
-                // Передаем POST данные
-                id_field_chenged: 874979,
-                id_lead_chenged: AMOCRM.data.current_card.id
-            },
-            function (msg) {
-              console.log(response)
-            },
-            'json',
-            function() {
-              alert("Error!");
-            }
-          );
-        } else {
-          console.log('error post query...');
-        }
+            self.crm_post(
+              'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/test.php',
+              {
+                  // Передаем POST данные
+                  id_field_chenged: 874979,
+                  id_lead_chenged: AMOCRM.data.current_card.id
+              },
+              function (msg) {
+                console.log(msg);
+              },
+              'json',
+              function() {
+                alert("Error!");
+              }
+            );
+        })
         return true;
       },
       settings: function () {
