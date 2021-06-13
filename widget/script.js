@@ -103,7 +103,6 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           }
         );
         //Делаем запрос на изменение поля, даты последнего изменения сделки, для следующих 50 сделок в цикле
-        for(let i = 0; i < 10; i++) {
           self.crm_post(
             'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/updateNextLeads.php',
             {
@@ -118,7 +117,6 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               alert("Error!");
             }
           );
-        }
 
         return true;
       },
