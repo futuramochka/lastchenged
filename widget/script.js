@@ -87,9 +87,9 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               }
             );
         })
-        //Делаем запрос на изменение поля, даты последнего изменения для первых 50 сделок
+        //Делаем запрос на изменение поля, даты последнего изменения для всех сделок
         self.crm_post(
-          'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/updateFirstLeads.php',
+          'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/getOurLeads.php',
           {
               // Передаем POST данные id поля куда будем записывать
               id_field_chenged: 874979
@@ -102,22 +102,6 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
             alert("Error!");
           }
         );
-        //Делаем запрос на изменение поля, даты последнего изменения сделки, для следующих 50 сделок в цикле
-          self.crm_post(
-            'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/updateNextLeads.php',
-            {
-                // Передаем POST данные id поля куда будем записывать
-                id_field_chenged: 874979
-            },
-            function (msg) {
-              console.log(msg);
-            },
-            'json',
-            function() {
-              alert("Error!");
-            }
-          );
-
         return true;
       },
       settings: function () {
