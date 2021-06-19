@@ -95,13 +95,30 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               id_field_chenged: 874979
           },
           function (msg) {
-            console.log(msg);
+            console.log("Ok bro...");
+            //Делаем повторный запрос с message
+            self.crm_post(
+              'http://dubass.beget.tech/vendor/amocrm/amocrm-api-library/examples/updateNextLeads.php',
+              {
+                  // Передаем POST данные id поля куда будем записывать
+                  id_field_chenged: 874979,
+                  message: msg
+              },
+              function (msg) {
+                console.log("Ok bro...");
+              },
+              'text',
+              function() {
+                alert("Error!");
+              }
+            )
           },
-          'json',
+          'text',
           function() {
             alert("Error!");
-          }
+          },
         );
+        
         return true;
       },
       settings: function () {
